@@ -1,32 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
+              xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
-              android:layout_height="wrap_content"
+              android:layout_height="110dp"
+              android:orientation="horizontal"
               android:id="@+id/recycler_layout">
 
-    <TextView
-            android:layout_marginLeft="10sp"
-            android:text="Firstname"
-            android:textSize="30dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtrecyc_fname"/>
 
-    <TextView
-            android:layout_marginLeft="10sp"
-            android:text="Middlename"
-            android:textSize="30dp"
+    <ImageView
+            android:layout_marginLeft="15dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtrecyc_mname"/>
+            android:layout_height="100dp"
+            tools:srcCompat="@tools:sample/avatars"
+            android:id="@+id/imgrecyc_photo"/>
 
-    <TextView
-            android:layout_marginLeft="10sp"
-            android:text="Lastname"
-            android:textSize="30dp"
+    <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtrecyc_lname"/>
+            android:layout_height="90dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:scaleType="fitXY"
+            android:orientation="vertical">
+
+
+        <TextView
+                android:layout_marginStart="10sp"
+                android:text="Firstname"
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtrecyc_fname"/>
+        <TextView
+                android:layout_marginStart="10sp"
+                android:text="Middlename"
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtrecyc_email"/>
+
+        <TextView
+                android:layout_marginStart="10sp"
+                android:text="Lastname"
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtrecyc_lname"/>
+
+    </LinearLayout>
 
 </LinearLayout>

@@ -2,4 +2,4 @@ package com.example.myapplication
 
 import java.io.Serializable
 
-data class Person (val fname:String, val mname:String, val lname:String)
+data class Person (var id: Int, val fname:String, val email:String, val lname:String, var photo: String)

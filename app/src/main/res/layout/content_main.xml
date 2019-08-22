@@ -10,11 +10,11 @@
         tools:context=".MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="395dp"
-            android:layout_height="659dp"
-            tools:layout_editor_absoluteY="8dp"
+            android:layout_width="390dp"
+            android:layout_height="580dp"
             tools:layout_editor_absoluteX="8dp"
             tools:ignore="MissingConstraints"
-            android:id="@+id/recycList"/>
+            android:id="@+id/recycList" android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
