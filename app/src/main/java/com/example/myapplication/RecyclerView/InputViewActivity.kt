@@ -1,7 +1,5 @@
 package com.example.myapplication
 
-import Builder.DataX
-import Builder.NameList
 import Builder.NameServices
 import Builder.NameView
 import androidx.appcompat.app.AppCompatActivity
