@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".HomeActivity">
+
+
+    <TextView
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="HOME PAGE"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2"
+            android:textSize="20sp"/>
+
+    <Button
+            android:layout_marginTop="50dp"
+            android:text="RecyclerView with Retrofit"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteY="78dp"
+            tools:layout_editor_absoluteX="161dp"
+            android:id="@+id/btn_retrofit"
+            android:layout_gravity="center"/>
+    <Button
+            android:layout_marginTop="50dp"
+            android:text="Login @POST"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteY="155dp"
+            tools:layout_editor_absoluteX="161dp"
+            android:id="@+id/btn_login"
+            android:layout_gravity="center"/>
+
+    <Button
+            android:text="Fragments"
+            android:layout_marginTop="50dp"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:id="@+id/btn_frag"/>
+
+</LinearLayout>

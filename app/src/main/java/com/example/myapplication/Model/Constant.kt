@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.myapplication.Model
 
 
 const val EXTRA_POS = "position"

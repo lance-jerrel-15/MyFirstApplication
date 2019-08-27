@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.myapplication.RecyclerView
 
 import Builder.NameServices
 import Builder.NameView
@@ -6,6 +6,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.example.myapplication.Model.BASE_URL
+import com.example.myapplication.Model.EXTRA_ID
+import com.example.myapplication.Model.Person
+import com.example.myapplication.R
 import kotlinx.android.synthetic.main.activity_input_view.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -32,7 +36,13 @@ class InputViewActivity : AppCompatActivity() {
             override fun onResponse(call: Call<NameView>, response: Response<NameView>) {
                 if(response.isSuccessful && response.body() != null) {
                     val names = (response.body() as NameView).data
-                    Person(names.id, names.firstName, names.lastName, names.email, names.avatar)
+                    Person(
+                        names.id,
+                        names.firstName,
+                        names.lastName,
+                        names.email,
+                        names.avatar
+                    )
 
                     txtV_id.text = "ID: "+ names.id
                     txtV_fname.text = "First Name: "+ names.firstName

@@ -1,5 +1,6 @@
-package com.example.myapplication
+package com.example.myapplication.RecyclerView
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,6 +8,9 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.example.myapplication.Model.CustomItemClickListener
+import com.example.myapplication.Model.Person
+import com.example.myapplication.R
 import kotlinx.android.synthetic.main.recyclerview_item.view.*
 import kotlin.coroutines.coroutineContext
 
@@ -45,6 +49,11 @@ class PersonAdapter : RecyclerView.Adapter<ViewHolder>() {
 
         holder.relayout.setOnClickListener {
             customItemClickListener?.onItemClickedView(position)
+            Toast.makeText(holder.itemView.context, "Item Number"+ personNames[position],Toast.LENGTH_SHORT).show()
+        }
+
+        holder.fname.setOnClickListener {
+            Toast.makeText(holder.itemView.context,"Total = "+ personNames.size,Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -63,3 +72,5 @@ class PersonAdapter : RecyclerView.Adapter<ViewHolder>() {
 
 
     }
+
+

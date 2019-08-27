@@ -1,38 +1,35 @@
-package com.example.myapplication
+package com.example.myapplication.RecyclerView
 
-import Builder.Data
 import Builder.NameList
 import Builder.NameServices
-import Builder.NameView
 import android.app.Activity
 import android.app.AlertDialog
-import android.app.Dialog
-import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
-import android.system.Os.remove
-import com.google.android.material.snackbar.Snackbar
-import androidx.appcompat.app.AppCompatActivity;
-import android.view.Menu
-import android.view.MenuItem
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity;
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import kotlinx.android.synthetic.main.activity_inputsave.*
+import com.example.myapplication.Model.*
+import com.example.myapplication.R
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
-import kotlinx.android.synthetic.main.recyclerview_item.*
-import org.json.JSONArray
-import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import java.lang.StringBuilder
-import android.view.LayoutInflater as LayoutInflater1
 
-class MainActivity : AppCompatActivity(), CustomItemClickListener {
+class MainActivity : AppCompatActivity(), CustomItemClickListener, View.OnClickListener {
+
+
+    override fun onClick(v: View?) {
+        when(v?.id) {
+            R.id.fab -> {}
+
+        }
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 
     val recycAdapter: PersonAdapter by lazy {
         PersonAdapter().apply { customItemClickListener = this@MainActivity }
@@ -54,8 +51,10 @@ class MainActivity : AppCompatActivity(), CustomItemClickListener {
                 .setAction("Action", null).show()*/
 
             val intent = Intent(this, InputSaveActivity::class.java)
+            intent.putExtra(EXTRA_ID, recycAdapter.itemCount + 1)
             startActivityForResult(intent, ADD_NAME)
         }
+        fab.setOnClickListener(this)
     }
 
 
@@ -114,6 +113,8 @@ class MainActivity : AppCompatActivity(), CustomItemClickListener {
                 val person = Person(id, firstname, email, lastname, photoname)
                 recycAdapter.personNames.add(person)
                 recycAdapter.notifyDataSetChanged()
+
+
             }
         }else if(requestCode == EDIT_NAME){
             if(resultCode == Activity.RESULT_OK){
@@ -152,7 +153,13 @@ class MainActivity : AppCompatActivity(), CustomItemClickListener {
                     if(response.isSuccessful && response.body() != null) {
                         val names = (response.body() as NameList).data
                         for (name in names) {
-                            val person = Person(name.id, name.firstName, name.lastName, name.email, name.avatar)
+                            val person = Person(
+                                name.id,
+                                name.firstName,
+                                name.lastName,
+                                name.email,
+                                name.avatar
+                            )
                             recycAdapter.personNames.add(person)
                         }
                         recycAdapter.notifyDataSetChanged()

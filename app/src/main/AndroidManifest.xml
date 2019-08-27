@@ -11,10 +11,18 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".InputViewActivity">
+        <activity android:name=".Fragments.Fragment3">
         </activity>
         <activity
-                android:name=".MainActivity"
+                android:name=".Fragments.BottomnavigActivity"
+                android:label="@string/title_activity_bottomnavig">
+        </activity>
+        <activity android:name=".FragmentsActivity">
+        </activity>
+        <activity android:name=".Login.LoginActivity">
+        </activity>
+        <activity
+                android:name=".HomeActivity"
                 android:label="@string/app_name"
                 android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -23,7 +31,12 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".InputSaveActivity"/>
+        <activity android:name=".RecyclerView.MainActivity">
+        </activity>
+        <activity android:name=".RecyclerView.InputViewActivity">
+        </activity>
+        <activity android:name=".RecyclerView.InputSaveActivity">
+        </activity>
     </application>
 
 </manifest>

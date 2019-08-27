@@ -1,29 +1,33 @@
-package com.example.myapplication
+package com.example.myapplication.RecyclerView
 
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.example.myapplication.Model.*
+import com.example.myapplication.R
 import kotlinx.android.synthetic.main.activity_inputsave.*
-import kotlinx.android.synthetic.main.content_main.*
 
 class InputSaveActivity : AppCompatActivity() {
     private var pos = -1
     private var photo = ""
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_inputsave)
+
 
         pos = intent.getIntExtra(EXTRA_POS, -1)
         val id = intent.getIntExtra(EXTRA_ID, 0)
         val fname = intent.getStringExtra(EXTRA_FNAME) ?: ""
         val email = intent.getStringExtra(EXTRA_EMAIL) ?: ""
         val lname = intent.getStringExtra(EXTRA_LNAME) ?: ""
-        var photo = intent.getStringExtra(EXTRA_PHOTO ) ?: ""
+        var photo = intent.getStringExtra(EXTRA_PHOTO) ?: ""
 
 
         edt_id.setText(""+id)

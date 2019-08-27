@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Login.LoginActivity"
+        android:orientation="vertical">
+
+    <TextView
+            android:layout_marginTop="20dp"
+            android:text="Login In @POST"
+            android:textSize="20sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView"
+            android:gravity="center"/>
+
+    <EditText
+            android:layout_marginTop="70dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            tools:layout_editor_absoluteY="163dp"
+            tools:layout_editor_absoluteX="99dp"
+            android:id="@+id/edt_username"
+            android:layout_marginStart="100dp"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            tools:layout_editor_absoluteY="90dp"
+            tools:layout_editor_absoluteX="98dp"
+            android:id="@+id/edt_password"
+            android:layout_marginLeft="100dp"/>
+    <Button
+            android:text="LOG IN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_login_info"/>
+
+    <Button
+            android:text="Back"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_backlog"/>
+
+
+</LinearLayout>

@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.myapplication.Model
 
 interface CustomItemClickListener {
     fun onItemClicked(position: Int,fname: String)

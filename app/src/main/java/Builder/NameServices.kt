@@ -1,8 +1,7 @@
 package Builder
 
 import retrofit2.Call
-import retrofit2.http.GET
-import retrofit2.http.Path
+import retrofit2.http.*
 
 interface NameServices {
 
@@ -11,4 +10,10 @@ interface NameServices {
 
     @GET("api/users/{id}")
     fun getNameView(@Path("id") id : String): Call<NameView>
+
+    @FormUrlEncoded
+    @POST("api/login")
+    fun getLogin(@Field("email") email: String,
+                 @Field("password") password: String): Call<LoginInfo>
+
 }
